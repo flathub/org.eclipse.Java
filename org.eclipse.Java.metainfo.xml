@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2018-2019 Mat Booth <mat.booth@redhat.com> -->
+<!-- Copyright 2018-2020 Mat Booth <mat.booth@redhat.com> -->
 <component type="desktop-application">
   <id>org.eclipse.Java</id>
   <launchable type="desktop-id">org.eclipse.Java.desktop</launchable>
@@ -31,6 +31,9 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>mat.booth@redhat.com</update_contact>
   <releases>
+    <release version="4.14" date="2019-12-18">
+      <url>https://www.eclipse.org/eclipse/news/4.14/</url>
+    </release>
     <release version="4.13" date="2019-09-18">
       <url>https://www.eclipse.org/eclipse/news/4.13/</url>
     </release>
