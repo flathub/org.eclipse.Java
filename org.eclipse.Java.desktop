@@ -3,7 +3,7 @@ Type=Application
 Name=Eclipse IDE for Java Developers
 Comment=The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Mylyn, Maven and Gradle integration.
 Icon=org.eclipse.Java
-Exec=eclipse
+Exec=eclipse %f
 Terminal=false
 Categories=Development;IDE;
-
+MimeType=text/x-java;text/x-maven+xml;text/x-gradle;
