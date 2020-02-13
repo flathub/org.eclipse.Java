@@ -5,7 +5,7 @@
   "sdk" : "org.gnome.Sdk",
   "sdk-extensions" : [
     "org.freedesktop.Sdk.Extension.openjdk11",
-    "org.freedesktop.Sdk.Extension.node10"
+    "org.freedesktop.Sdk.Extension.node12"
   ],
   "command" : "eclipse",
   "finish-args" : [
@@ -27,7 +27,7 @@
   }, {
     "name" : "node",
     "buildsystem" : "simple",
-    "build-commands" : [ "/usr/lib/sdk/node10/install.sh" ]
+    "build-commands" : [ "/usr/lib/sdk/node12/install.sh" ]
   }, {
     "name" : "eclipse",
     "buildsystem" : "simple",
