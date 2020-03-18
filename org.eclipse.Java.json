@@ -1,7 +1,7 @@
 {
   "id" : "org.eclipse.Java",
   "runtime" : "org.gnome.Sdk",
-  "runtime-version" : "3.34",
+  "runtime-version" : "3.36",
   "sdk" : "org.gnome.Sdk",
   "sdk-extensions" : [
     "org.freedesktop.Sdk.Extension.openjdk11",
@@ -51,8 +51,8 @@
     ],
     "sources" : [ {
       "type" : "archive",
-      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "358d1c6c6900d3cfcf9d89a32228695206902297a7f74c440981660c7e4db810fae22e721e78b4d7df84b3bf951f91b1ba87dcd1fe9c7b00235b87f8633f4883",
+      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-03/R/eclipse-java-2020-03-R-linux-gtk-x86_64.tar.gz",
+      "sha512" : "c9390723fe39e86c7c75fce130a2a46e75c43970e1d801b4025f969369dfe6ce75cb990f8208918a89c04f371300ec482ed8e4fd74ab28252219c64f0107e51c",
       "strip-components" : 0
     }, {
       "type" : "file",
