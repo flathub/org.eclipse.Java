@@ -51,8 +51,8 @@
     ],
     "sources" : [ {
       "type" : "archive",
-      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-03/R/eclipse-java-2020-03-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "c9390723fe39e86c7c75fce130a2a46e75c43970e1d801b4025f969369dfe6ce75cb990f8208918a89c04f371300ec482ed8e4fd74ab28252219c64f0107e51c",
+      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-06/R/eclipse-java-2020-06-R-linux-gtk-x86_64.tar.gz",
+      "sha512" : "5a4f2196c2fa1441bd8699b25daa341229d104e7c8f62903b44a6a8c6f94b96e33127dcb7518ef1b27c4750211b0639180052d696cd2d63780f75bb82b91ab21",
       "strip-components" : 0
     }, {
       "type" : "file",
