@@ -52,7 +52,7 @@
     "sources" : [ {
       "type" : "archive",
       "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-06/R/eclipse-java-2020-06-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "5a4f2196c2fa1441bd8699b25daa341229d104e7c8f62903b44a6a8c6f94b96e33127dcb7518ef1b27c4750211b0639180052d696cd2d63780f75bb82b91ab21",
+      "sha512" : "2b471ba974f0632e2e8198c77a4a85cd126bbc1c2e9313e388997820181b39124cb4443c8aac8af0bbb7973bcb2e55303b566f91f58f35e1bf9eb3ea8f5289ec",
       "strip-components" : 0
     }, {
       "type" : "file",
