@@ -31,6 +31,9 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>mat.booth@redhat.com</update_contact>
   <releases>
+    <release version="4.17" date="2020-09-16">
+      <url>https://www.eclipse.org/eclipse/news/4.17/</url>
+    </release>
     <release version="4.16" date="2020-06-17">
       <url>https://www.eclipse.org/eclipse/news/4.16/</url>
     </release>

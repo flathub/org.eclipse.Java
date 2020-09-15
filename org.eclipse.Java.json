@@ -4,8 +4,8 @@
   "runtime-version" : "3.36",
   "sdk" : "org.gnome.Sdk",
   "sdk-extensions" : [
-    "org.freedesktop.Sdk.Extension.openjdk11",
-    "org.freedesktop.Sdk.Extension.node12"
+    "org.freedesktop.Sdk.Extension.openjdk",
+    "org.freedesktop.Sdk.Extension.openjdk11"
   ],
   "command" : "eclipse",
   "finish-args" : [
@@ -18,16 +18,15 @@
     "--allow=devel",
     "--socket=session-bus",
     "--device=dri",
-    "--env=PATH=/app/bin:/app/jdk/bin:/app/node/bin:/usr/bin"
+    "--env=PATH=/app/bin:/app/openjdk-11/bin:/usr/bin"
   ],
   "modules" : [ {
     "name" : "openjdk",
     "buildsystem" : "simple",
-    "build-commands" : [ "/usr/lib/sdk/openjdk11/installjdk.sh" ]
-  }, {
-    "name" : "node",
-    "buildsystem" : "simple",
-    "build-commands" : [ "/usr/lib/sdk/node12/install.sh" ]
+    "build-commands" : [
+      "/usr/lib/sdk/openjdk11/installjdk.sh", "mv /app/jdk /app/openjdk-11",
+      "/usr/lib/sdk/openjdk/installjdk.sh", "mv /app/jdk /app/openjdk-latest"
+    ]
   }, {
     "name" : "eclipse",
     "buildsystem" : "simple",
@@ -51,8 +50,8 @@
     ],
     "sources" : [ {
       "type" : "archive",
-      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-06/R/eclipse-java-2020-06-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "2b471ba974f0632e2e8198c77a4a85cd126bbc1c2e9313e388997820181b39124cb4443c8aac8af0bbb7973bcb2e55303b566f91f58f35e1bf9eb3ea8f5289ec",
+      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/eclipse-java-2020-09-R-linux-gtk-x86_64.tar.gz",
+      "sha512" : "38b063a4df5a0ae6d22f82fb1c64281e462ef8b4de6e4cc970d47e89575c447376550ebc8063b8bcf2c6532ac7a276fe9d4c79f140846357c4218899f9d93bf3",
       "strip-components" : 0
     }, {
       "type" : "file",

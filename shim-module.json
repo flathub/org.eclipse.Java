@@ -1627,5 +1627,5 @@
       "JAVA_HOME" : "/usr/lib/sdk/openjdk11/jvm/openjdk-11"
     }
   },
-  "build-commands" : [ "mvn -V -B -o verify", "install -Dm 644 target/flatpak-dev-shim-1.0.1-SNAPSHOT.jar /app/eclipse/flatpak-dev-shim.jar", "install -Dm 644 target/libflatpakdevshim.so /app/jdk/lib/libflatpakdevshim.so" ]
+  "build-commands" : [ "mvn -V -B -o verify", "install -Dm 644 target/flatpak-dev-shim-1.0.1-SNAPSHOT.jar /app/eclipse/flatpak-dev-shim.jar", "install -Dm 644 target/libflatpakdevshim.so /app/openjdk-11/lib/libflatpakdevshim.so" ]
 }
