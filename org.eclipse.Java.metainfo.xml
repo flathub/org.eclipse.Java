@@ -31,6 +31,9 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>mat.booth@redhat.com</update_contact>
   <releases>
+    <release version="4.18" date="2020-12-16">
+      <url>https://www.eclipse.org/eclipse/news/4.18/</url>
+    </release>
     <release version="4.17" date="2020-09-16">
       <url>https://www.eclipse.org/eclipse/news/4.17/</url>
     </release>
@@ -57,4 +60,3 @@
   <url type="homepage">https://www.eclipse.org/</url>
   <url type="help">https://help.eclipse.org/</url>
 </component>
-
