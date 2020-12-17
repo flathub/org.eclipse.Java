@@ -50,8 +50,8 @@
     ],
     "sources" : [ {
       "type" : "archive",
-      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/eclipse-java-2020-09-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "38b063a4df5a0ae6d22f82fb1c64281e462ef8b4de6e4cc970d47e89575c447376550ebc8063b8bcf2c6532ac7a276fe9d4c79f140846357c4218899f9d93bf3",
+      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-12/R/eclipse-java-2020-12-R-linux-gtk-x86_64.tar.gz",
+      "sha512" : "1d5aac59454d35175c6b388674d23de91f45d953141389d82b5557d46de92beb2b14396427bfab8f6b198ed58bed67094755d26d3d379c92733f2a74d51b02bd",
       "strip-components" : 0
     }, {
       "type" : "file",
@@ -64,5 +64,11 @@
     } ]
   },
   "shim-module.json"
-  ]
+  ],
+  "x-checker-data" : {
+    "type" : "html",
+    "url" : "https://www.eclipse.org/downloads/",
+    "version-pattern" : "Get Eclipse IDE ([\\d]{4}-[\\d]{2})",
+    "url-template" : "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz"
+  }
 }
