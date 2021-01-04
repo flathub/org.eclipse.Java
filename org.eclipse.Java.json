@@ -64,11 +64,5 @@
     } ]
   },
   "shim-module.json"
-  ],
-  "x-checker-data" : {
-    "type" : "html",
-    "url" : "https://www.eclipse.org/downloads/",
-    "version-pattern" : "Get Eclipse IDE ([\\d]{4}-[\\d]{2})",
-    "url-template" : "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz"
-  }
+  ]
 }
