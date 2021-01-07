@@ -45,6 +45,8 @@
       "mkdir -p /app/share/icons/hicolor/256x256/apps",
       "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png /app/share/icons/hicolor/256x256/apps/org.eclipse.Java.png ; fi",
       "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
+      "sed -i -e '/-vm/d' /app/eclipse/eclipse.ini",
+      "sed -i -e '/plugins\\/org.eclipse.justj.openjdk.hotspot/d' /app/eclipse/eclipse.ini",
       "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Java/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
       "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini"
     ],
