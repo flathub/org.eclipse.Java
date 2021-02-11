@@ -3,10 +3,7 @@
   "runtime" : "org.gnome.Platform",
   "runtime-version" : "3.38",
   "sdk" : "org.gnome.Sdk",
-  "sdk-extensions" : [
-    "org.freedesktop.Sdk.Extension.openjdk",
-    "org.freedesktop.Sdk.Extension.openjdk11"
-  ],
+  "sdk-extensions" : [ ],
   "command" : "eclipse",
   "finish-args" : [
     "--require-version=1.0.2",
@@ -17,17 +14,9 @@
     "--socket=wayland",
     "--allow=devel",
     "--socket=session-bus",
-    "--device=dri",
-    "--env=PATH=/app/bin:/app/openjdk-11/bin:/usr/bin"
+    "--device=dri"
   ],
   "modules" : [ {
-    "name" : "openjdk",
-    "buildsystem" : "simple",
-    "build-commands" : [
-      "/usr/lib/sdk/openjdk11/installjdk.sh", "mv /app/jdk /app/openjdk-11",
-      "/usr/lib/sdk/openjdk/installjdk.sh", "mv /app/jdk /app/openjdk-latest"
-    ]
-  }, {
     "name" : "eclipse",
     "buildsystem" : "simple",
     "build-commands" : [
@@ -36,6 +25,8 @@
       "ln -s /app/eclipse/eclipse /app/bin",
       "install -Dm 644 org.eclipse.Java.desktop /app/share/applications/org.eclipse.Java.desktop",
       "install -Dm 644 org.eclipse.Java.metainfo.xml /app/share/metainfo/org.eclipse.Java.metainfo.xml",
+      "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.jar /app/eclipse/flatpak-dev-shim.jar",
+      "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.so /app/lib/libflatpakdevshim.so",
       "mkdir -p /app/share/icons/hicolor/32x32/apps",
       "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png /app/share/icons/hicolor/32x32/apps/org.eclipse.Java.png ; fi",
       "mkdir -p /app/share/icons/hicolor/64x64/apps",
@@ -45,16 +36,25 @@
       "mkdir -p /app/share/icons/hicolor/256x256/apps",
       "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png /app/share/icons/hicolor/256x256/apps/org.eclipse.Java.png ; fi",
       "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
-      "sed -i -e '/-vm/d' /app/eclipse/eclipse.ini",
-      "sed -i -e '/plugins\\/org.eclipse.justj.openjdk.hotspot/d' /app/eclipse/eclipse.ini",
       "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Java/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
-      "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini"
+      "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini",
+      "echo \"-Dsun.boot.library.path=/app/lib\" >> /app/eclipse/eclipse.ini"
     ],
     "sources" : [ {
       "type" : "archive",
       "url" : "https://download.eclipse.org/technology/epp/downloads/release/2020-12/R/eclipse-java-2020-12-R-linux-gtk-x86_64.tar.gz",
       "sha512" : "1d5aac59454d35175c6b388674d23de91f45d953141389d82b5557d46de92beb2b14396427bfab8f6b198ed58bed67094755d26d3d379c92733f2a74d51b02bd",
       "strip-components" : 0
+    }, {
+      "type" : "file",
+      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210128.181650-1.jar",
+      "sha1" : "ae8743fc0efc8790f9851b8b65a7682aebfad895",
+      "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
+    }, {
+      "type" : "file",
+      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210128.181650-1.so",
+      "sha1" : "a6f9157ab15d6cf0d01931778b509694762affc4",
+      "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
     }, {
       "type" : "file",
       "path" : "org.eclipse.Java.desktop",
@@ -64,7 +64,5 @@
       "path" : "org.eclipse.Java.metainfo.xml",
       "dest-filename" : "org.eclipse.Java.metainfo.xml"
     } ]
-  },
-  "shim-module.json"
-  ]
+  } ]
 }
