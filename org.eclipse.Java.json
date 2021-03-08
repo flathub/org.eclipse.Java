@@ -6,7 +6,7 @@
   "sdk-extensions" : [ ],
   "command" : "eclipse",
   "finish-args" : [
-    "--require-version=1.0.2",
+    "--require-version=1.7.1",
     "--filesystem=host",
     "--share=network",
     "--share=ipc",
@@ -47,12 +47,12 @@
       "strip-components" : 0
     }, {
       "type" : "file",
-      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210128.181650-1.jar",
-      "sha1" : "ae8743fc0efc8790f9851b8b65a7682aebfad895",
+      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210308.114130-2.jar",
+      "sha1" : "0e7fdf64ea989f97d5e13515b63144a91fa2d8cf",
       "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
     }, {
       "type" : "file",
-      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210128.181650-1.so",
+      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210308.114130-2.so",
       "sha1" : "a6f9157ab15d6cf0d01931778b509694762affc4",
       "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
     }, {
