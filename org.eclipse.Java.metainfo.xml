@@ -6,7 +6,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>EPL-2.0</project_license>
   <name>Eclipse IDE for Java Developers</name>
-  <summary>The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Mylyn, Maven and Gradle integration</summary>
+  <summary>The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Maven and Gradle integration</summary>
   <description>
     <p>The Eclipse IDE delivers what you need to rapidly innnovate.</p>
     <ul>
@@ -31,23 +31,14 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>mat.booth@redhat.com</update_contact>
   <releases>
+    <release version="4.19" date="2021-03-17">
+      <url>https://www.eclipse.org/eclipse/news/4.19/</url>
+    </release>
     <release version="4.18" date="2020-12-16">
       <url>https://www.eclipse.org/eclipse/news/4.18/</url>
     </release>
     <release version="4.17" date="2020-09-16">
       <url>https://www.eclipse.org/eclipse/news/4.17/</url>
-    </release>
-    <release version="4.16" date="2020-06-17">
-      <url>https://www.eclipse.org/eclipse/news/4.16/</url>
-    </release>
-    <release version="4.15" date="2020-03-18">
-      <url>https://www.eclipse.org/eclipse/news/4.15/</url>
-    </release>
-    <release version="4.14" date="2019-12-18">
-      <url>https://www.eclipse.org/eclipse/news/4.14/</url>
-    </release>
-    <release version="4.13" date="2019-09-18">
-      <url>https://www.eclipse.org/eclipse/news/4.13/</url>
     </release>
   </releases>
   <kudos>
