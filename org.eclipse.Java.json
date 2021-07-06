@@ -8,6 +8,7 @@
   "finish-args" : [
     "--require-version=1.7.1",
     "--filesystem=host",
+    "--filesystem=/tmp:rw",
     "--share=network",
     "--share=ipc",
     "--socket=x11",
