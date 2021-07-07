@@ -15,7 +15,8 @@
     "--socket=wayland",
     "--allow=devel",
     "--socket=session-bus",
-    "--device=dri"
+    "--device=all",
+    "--env=PATH=/app/bin:/usr/bin:/var/run/host/usr/bin"
   ],
   "modules" : [ {
     "name" : "eclipse",
@@ -39,7 +40,11 @@
       "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
       "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Java/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
       "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini",
-      "echo \"-Dsun.boot.library.path=/app/lib\" >> /app/eclipse/eclipse.ini"
+      "echo \"-Dsun.boot.library.path=/app/lib\" >> /app/eclipse/eclipse.ini",
+      "ln -s /var/run/host/etc/gdbinit /etc",
+      "ln -s /var/run/host/etc/gdbinit.d /etc",
+      "ln -s /var/run/host/etc/hosts /etc",
+      "ln -s /var/run/host/etc/services /etc"      
     ],
     "sources" : [ {
       "type" : "archive",
