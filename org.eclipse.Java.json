@@ -14,8 +14,10 @@
     "--socket=x11",
     "--socket=wayland",
     "--allow=devel",
+    "--talk-name=org.freedesktop.Flatpak",
     "--socket=session-bus",
-    "--device=dri"
+    "--device=dri",
+    "--env=PATH=/app/bin:/usr/bin"
   ],
   "modules" : [ {
     "name" : "eclipse",
