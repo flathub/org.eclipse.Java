@@ -31,6 +31,9 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>mat.booth@redhat.com</update_contact>
   <releases>
+    <release version="4.21" date="2021-09-15">
+      <url>https://www.eclipse.org/eclipse/news/4.21/</url>
+    </release>
     <release version="4.20" date="2021-06-22">
       <url>https://www.eclipse.org/eclipse/news/4.20/</url>
     </release>
