@@ -31,6 +31,9 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>mat.booth@redhat.com</update_contact>
   <releases>
+    <release version="4.22" date="2021-12-08">
+      <url>https://www.eclipse.org/eclipse/news/4.22/</url>
+    </release>
     <release version="4.21" date="2021-09-15">
       <url>https://www.eclipse.org/eclipse/news/4.21/</url>
     </release>
@@ -39,12 +42,6 @@
     </release>
     <release version="4.19" date="2021-03-17">
       <url>https://www.eclipse.org/eclipse/news/4.19/</url>
-    </release>
-    <release version="4.18" date="2020-12-16">
-      <url>https://www.eclipse.org/eclipse/news/4.18/</url>
-    </release>
-    <release version="4.17" date="2020-09-16">
-      <url>https://www.eclipse.org/eclipse/news/4.17/</url>
     </release>
   </releases>
   <kudos>
