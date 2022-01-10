@@ -29,7 +29,7 @@
     </screenshot>
   </screenshots>
   <developer_name>Eclipse Foundation</developer_name>
-  <update_contact>mat.booth@redhat.com</update_contact>
+  <update_contact>akurtakov@gmail.com</update_contact>
   <releases>
     <release version="4.22" date="2021-12-08">
       <url>https://www.eclipse.org/eclipse/news/4.22/</url>
