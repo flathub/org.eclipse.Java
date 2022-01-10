@@ -20,11 +20,11 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://raw.githubusercontent.com/eclipse-linuxtools/org.eclipse.linuxtools.eclipse-build/master/flatpak/screenshots/org.eclipse.Java-development.png</image>
+      <image>https://raw.githubusercontent.com/eclipse-linuxtools/org.eclipse.linuxtools.eclipse-build/master/flatpak/screenshots/org.eclipse.Java-development.png</image>
       <caption>Java Development Tools</caption>
     </screenshot>
     <screenshot>
-      <image type="source">https://git.eclipse.org/c/linuxtools/org.eclipse.linuxtools.eclipse-build.git/plain/flatpak/screenshots/org.eclipse.Java-git.png</image>
+      <image>https://git.eclipse.org/c/linuxtools/org.eclipse.linuxtools.eclipse-build.git/plain/flatpak/screenshots/org.eclipse.Java-git.png</image>
       <caption>Git Source Control Perspective</caption>
     </screenshot>
   </screenshots>
