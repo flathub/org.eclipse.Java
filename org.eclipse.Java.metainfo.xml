@@ -31,6 +31,9 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>akurtakov@gmail.com</update_contact>
   <releases>
+    <release version="4.24" date="2022-06-15">
+      <url>https://www.eclipse.org/eclipse/news/4.24/</url>
+    </release>
     <release version="4.23" date="2022-03-16">
       <url>https://www.eclipse.org/eclipse/news/4.23/</url>
     </release>
