@@ -45,7 +45,13 @@
       "type" : "archive",
       "url" : "https://download.eclipse.org/technology/epp/downloads/release/2022-06/R/eclipse-java-2022-06-R-linux-gtk-x86_64.tar.gz",
       "sha512" : "69c7bece9cf9b632c0f3d8072f206b8e574a53bfa46fce6e257e32e0841d564aec92b03eb82bf4cfd97307fa9b82b1f9d5914ddb1cf4e33d6714b25dd3d59a70",
-      "strip-components" : 0
+      "strip-components" : 0,
+      "x-checker-data": {
+        "type": "html",
+        "url": "https://download.eclipse.org/technology/epp/downloads/release/release.xml",
+        "version-pattern": "<present>(\\d{4}-\\d{2})\/R<\/present>",
+        "url-template": "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz)"
+      }
     }, {
       "type" : "file",
       "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210308.114130-2.jar",
