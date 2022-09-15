@@ -50,7 +50,7 @@
         "type": "html",
         "url": "https://download.eclipse.org/technology/epp/downloads/release/release.xml",
         "version-pattern": "<present>(\\d{4}-\\d{2})\/R<\/present>",
-        "url-template": "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz)"
+        "url-template": "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz"
       }
     }, {
       "type" : "file",
