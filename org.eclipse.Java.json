@@ -43,8 +43,8 @@
     ],
     "sources" : [ {
       "type" : "archive",
-      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2022-06/R/eclipse-java-2022-06-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "69c7bece9cf9b632c0f3d8072f206b8e574a53bfa46fce6e257e32e0841d564aec92b03eb82bf4cfd97307fa9b82b1f9d5914ddb1cf4e33d6714b25dd3d59a70",
+      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2022-09/R/eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz",
+      "sha512" : "51e8c4d29ce0c0162998d6dd1847a030ce6210e3183fe56f79b535ed841e254ce1fea62bd01eac7d7c09f9c75309abca08d18b30c0de9c931893d57fe834991f",
       "strip-components" : 0,
       "x-checker-data": {
         "type": "html",
@@ -54,13 +54,13 @@
       }
     }, {
       "type" : "file",
-      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210308.114130-2.jar",
-      "sha1" : "0e7fdf64ea989f97d5e13515b63144a91fa2d8cf",
+      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20211216.040236-6.jar",
+      "sha1" : "bc4577270d1dfd8b2c9e0f3d44281cf541c586d9",
       "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
     }, {
       "type" : "file",
-      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20210308.114130-2.so",
-      "sha1" : "a6f9157ab15d6cf0d01931778b509694762affc4",
+      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20211216.040236-6.so",
+      "sha1" : "e567f59187d4824ed57fa570b1c1ef19f6f7aa3f",
       "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
     }, {
       "type" : "file",
