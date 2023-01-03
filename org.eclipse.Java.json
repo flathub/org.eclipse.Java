@@ -1,75 +1,83 @@
 {
-  "id" : "org.eclipse.Java",
-  "runtime" : "org.gnome.Platform",
-  "runtime-version" : "43",
-  "sdk" : "org.gnome.Sdk",
-  "sdk-extensions" : [ ],
-  "command" : "eclipse",
-  "finish-args" : [
-    "--require-version=1.7.1",
-    "--filesystem=host",
-    "--filesystem=/tmp:rw",
-    "--share=network",
-    "--share=ipc",
-    "--socket=x11",
-    "--socket=wayland",
-    "--allow=devel",
-    "--socket=session-bus",
-    "--device=dri"
-  ],
-  "modules" : [ {
-    "name" : "eclipse",
-    "buildsystem" : "simple",
-    "build-commands" : [
-      "mv eclipse /app",
-      "mkdir -p /app/bin",
-      "ln -s /app/eclipse/eclipse /app/bin",
-      "install -Dm 644 org.eclipse.Java.desktop /app/share/applications/org.eclipse.Java.desktop",
-      "install -Dm 644 org.eclipse.Java.metainfo.xml /app/share/metainfo/org.eclipse.Java.metainfo.xml",
-      "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.jar /app/eclipse/flatpak-dev-shim.jar",
-      "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.so /app/lib/libflatpakdevshim.so",
-      "mkdir -p /app/share/icons/hicolor/32x32/apps",
-      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png /app/share/icons/hicolor/32x32/apps/org.eclipse.Java.png ; fi",
-      "mkdir -p /app/share/icons/hicolor/64x64/apps",
-      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse64.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse64.png /app/share/icons/hicolor/64x64/apps/org.eclipse.Java.png ; fi",
-      "mkdir -p /app/share/icons/hicolor/128x128/apps",
-      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png /app/share/icons/hicolor/128x128/apps/org.eclipse.Java.png ; fi",
-      "mkdir -p /app/share/icons/hicolor/256x256/apps",
-      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png /app/share/icons/hicolor/256x256/apps/org.eclipse.Java.png ; fi",
-      "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
-      "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Java/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
-      "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini",
-      "echo \"-Dsun.boot.library.path=/app/lib\" >> /app/eclipse/eclipse.ini"
+    "id": "org.eclipse.Java",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "43",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [],
+    "command": "eclipse",
+    "finish-args": [
+        "--require-version=1.7.1",
+        "--filesystem=host",
+        "--filesystem=/tmp:rw",
+        "--share=network",
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--allow=devel",
+        "--socket=session-bus",
+        "--device=dri"
     ],
-    "sources" : [ {
-      "type" : "archive",
-      "url" : "https://download.eclipse.org/technology/epp/downloads/release/2022-12/R/eclipse-java-2022-12-R-linux-gtk-x86_64.tar.gz",
-      "sha512" : "ef59976152d59f20e36196c918129cd1a0cfabcb1b4f195565142aec6952503bf67eca0d616620a987caed14840f9ca86ac09fb371d462bed0a304402893a77d",
-      "strip-components" : 0,
-      "x-checker-data": {
-        "type": "html",
-        "url": "https://download.eclipse.org/technology/epp/downloads/release/release.xml",
-        "version-pattern": "<present>(\\d{4}-\\d{2})\/R<\/present>",
-        "url-template": "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz"
-      }
-    }, {
-      "type" : "file",
-      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20211216.040236-6.jar",
-      "sha1" : "bc4577270d1dfd8b2c9e0f3d44281cf541c586d9",
-      "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
-    }, {
-      "type" : "file",
-      "url" : "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20211216.040236-6.so",
-      "sha1" : "e567f59187d4824ed57fa570b1c1ef19f6f7aa3f",
-      "dest-filename" : "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
-    }, {
-      "type" : "file",
-      "path" : "org.eclipse.Java.desktop",
-      "dest-filename" : "org.eclipse.Java.desktop"
-    }, {
-      "type" : "file",
-      "path" : "org.eclipse.Java.metainfo.xml",
-      "dest-filename" : "org.eclipse.Java.metainfo.xml"
-    } ]
-  } ]
+    "modules": [
+        {
+            "name": "eclipse",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mv eclipse /app",
+                "mkdir -p /app/bin",
+                "ln -s /app/eclipse/eclipse /app/bin",
+                "install -Dm 644 org.eclipse.Java.desktop /app/share/applications/org.eclipse.Java.desktop",
+                "install -Dm 644 org.eclipse.Java.metainfo.xml /app/share/metainfo/org.eclipse.Java.metainfo.xml",
+                "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.jar /app/eclipse/flatpak-dev-shim.jar",
+                "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.so /app/lib/libflatpakdevshim.so",
+                "mkdir -p /app/share/icons/hicolor/32x32/apps",
+                "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png /app/share/icons/hicolor/32x32/apps/org.eclipse.Java.png ; fi",
+                "mkdir -p /app/share/icons/hicolor/64x64/apps",
+                "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse64.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse64.png /app/share/icons/hicolor/64x64/apps/org.eclipse.Java.png ; fi",
+                "mkdir -p /app/share/icons/hicolor/128x128/apps",
+                "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png /app/share/icons/hicolor/128x128/apps/org.eclipse.Java.png ; fi",
+                "mkdir -p /app/share/icons/hicolor/256x256/apps",
+                "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png /app/share/icons/hicolor/256x256/apps/org.eclipse.Java.png ; fi",
+                "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
+                "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Java/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
+                "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini",
+                "echo \"-Dsun.boot.library.path=/app/lib\" >> /app/eclipse/eclipse.ini"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2022-09/R/eclipse-java-2022-09-R-linux-gtk-x86_64.tar.gz",
+                    "sha512": "51e8c4d29ce0c0162998d6dd1847a030ce6210e3183fe56f79b535ed841e254ce1fea62bd01eac7d7c09f9c75309abca08d18b30c0de9c931893d57fe834991f",
+                    "strip-components": 0,
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://download.eclipse.org/technology/epp/downloads/release/release.xml",
+                        "version-pattern": "<present>(\\d{4}-\\d{2})/R</present>",
+                        "url-template": "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-x86_64.tar.gz"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20211216.040236-6.jar",
+                    "sha1": "bc4577270d1dfd8b2c9e0f3d44281cf541c586d9",
+                    "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
+                },
+                {
+                    "type": "file",
+                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20211216.040236-6.so",
+                    "sha1": "e567f59187d4824ed57fa570b1c1ef19f6f7aa3f",
+                    "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
+                },
+                {
+                    "type": "file",
+                    "path": "org.eclipse.Java.desktop",
+                    "dest-filename": "org.eclipse.Java.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "org.eclipse.Java.metainfo.xml",
+                    "dest-filename": "org.eclipse.Java.metainfo.xml"
+                }
+            ]
+        }
+    ]
 }
