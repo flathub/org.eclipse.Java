@@ -45,8 +45,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2023-03/R/eclipse-java-2023-03-R-linux-gtk-x86_64.tar.gz",
-                    "sha512": "ab9a9d25c1f1bbe0970e33ff5ea8a027bcd9e49c2c183bc0b6a50ef35e78644d4e8ba714ae0b7ccea41e2afd0d76ff4bcd40271560effc39c87f9db9ff02b90a",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2023-06/R/eclipse-java-2023-06-R-linux-gtk-x86_64.tar.gz",
+                    "sha512": "7683dd8c9934ca668c16068174ecf1f591fecb9b75866c58288b705884f78939ccfb4143c5cd435d02679b6cf6442fac96255702786fec64a605010fe0a0fbb5",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
