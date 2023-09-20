@@ -31,14 +31,14 @@
   <developer_name>Eclipse Foundation</developer_name>
   <update_contact>akurtakov@gmail.com</update_contact>
   <releases>
-	<release version="4.28" date="2023-06-14">
+	<release version="4.29" date="2023-09-13">
+      <url>https://www.eclipse.org/eclipse/news/4.29/</url>
+    </release>
+    <release version="4.28" date="2023-06-14">
       <url>https://www.eclipse.org/eclipse/news/4.28/</url>
     </release>
     <release version="4.27" date="2022-03-15">
       <url>https://www.eclipse.org/eclipse/news/4.27/</url>
-    </release>
-    <release version="4.26" date="2022-12-14">
-      <url>https://www.eclipse.org/eclipse/news/4.26/</url>
     </release>
   </releases>
   <kudos>
