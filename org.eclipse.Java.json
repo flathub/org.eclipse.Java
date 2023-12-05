@@ -22,7 +22,7 @@
             "name": "eclipse",
             "buildsystem": "simple",
             "build-options": {
-                  "no-debuginfo": true
+                "no-debuginfo": true
             },
             "build-commands": [
                 "mv eclipse /app",
@@ -48,8 +48,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2023-09/R/eclipse-java-2023-09-R-linux-gtk-x86_64.tar.gz",
-                    "sha512": "eb2c72dbc545d3e828430c359e6c76ca9f4184095504bec7b0ce675fffea74cb558aa307227fb533993f703fbcafaab6ca2daec3200a0987a96ca9cf8dbcee01",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2023-12/R/eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz",
+                    "sha512": "058f8374a59f764ef2840448cc6a2a7a1f2a3f2da2f1e086aab2cd4fa73959b5d426f3e5d8538ab5c2a9a7a46369ec802dc6ee02c430c7107a56c5bccb57d688",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
