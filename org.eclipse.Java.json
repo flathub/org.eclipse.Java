@@ -9,6 +9,7 @@
         "--require-version=1.7.1",
         "--filesystem=host",
         "--filesystem=/tmp:rw",
+        "--persist=.eclipse",
         "--share=network",
         "--share=ipc",
         "--socket=x11",
