@@ -6,5 +6,5 @@ Icon=org.eclipse.Java
 Exec=eclipse %f
 Terminal=false
 Categories=Development;IDE;
-MimeType=text/x-java;text/x-maven+xml;text/x-gradle;text/x-patch;text/x-diff;
+MimeType=text/x-java;text/x-maven+xml;text/x-gradle;text/x-patch;text/x-diff;x-scheme-handler/eclipse+mpc;
 StartupWMClass=Eclipse
