@@ -52,8 +52,8 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2023-12/R/eclipse-java-2023-12-R-linux-gtk-x86_64.tar.gz",
-                    "sha512": "058f8374a59f764ef2840448cc6a2a7a1f2a3f2da2f1e086aab2cd4fa73959b5d426f3e5d8538ab5c2a9a7a46369ec802dc6ee02c430c7107a56c5bccb57d688",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2024-03/R/eclipse-java-2024-03-R-linux-gtk-x86_64.tar.gz",
+                    "sha512": "973c94a0a029c29d717823a53c3a65f99fa53d51f605872c5dd854620e16cd4cb2c2ff8a5892cd550a70ab19e1a0a0d2e792661e936bd3d2bef4532bc533048b",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
@@ -67,8 +67,8 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2023-12/R/eclipse-java-2023-12-R-linux-gtk-aarch64.tar.gz",
-                    "sha512": "3ffca8ad6a3c63eb3c430092cf825afb8ff363b7d3056f0a5875b0659349cddc46146a870354a94fcb14301673b421423c8449310468eb1e610fdadbdccf68a2",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2024-03/R/eclipse-java-2024-03-R-linux-gtk-aarch64.tar.gz",
+                    "sha512": "eb6b97162a9e427477f59471afceefd6b1ba41ea52f94e3bad7a4bd5e6d0e546b62d906819156187ca908874124b1c915015989e89b0fe528624ea9019f39bd3",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
