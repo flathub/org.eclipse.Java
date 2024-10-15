@@ -12,10 +12,11 @@
         "--persist=.eclipse",
         "--share=network",
         "--share=ipc",
-        "--socket=x11",
         "--allow=devel",
         "--socket=session-bus",
-        "--device=dri"
+        "--device=dri",
+        "--socket=wayland",
+        "--socket=fallback-x11"
     ],
     "modules": [
         {
