@@ -23,21 +23,22 @@
             "name": "gdk-pixbuf",
             "buildsystem": "meson",
             "config-opts": [
-            "-Dothers=enabled",
-            "-Dman=false",
-            "-Dgtk_doc=false",
-            "-Dbuiltin_loaders=png,bmp,gif"
+                "-Dothers=enabled",
+                "-Dman=false",
+                "-Dgtk_doc=false",
+                "-Dbuiltin_loaders=png,bmp,gif"
             ],
             "sources": [
-            {
-                "type": "git",
-                "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git",
-                "tag": "2.42.12",
-                "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^([\\d.]+)$"
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git",
+                    "tag": "2.90.3",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    },
+                    "commit": "aab1a96d46a5b96dfe316cd897880637db98791c"
                 }
-            }
             ]
         },
         {
