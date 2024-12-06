@@ -32,11 +32,7 @@
             {
                 "type": "git",
                 "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git",
-                "tag": "2.42.12",
-                "x-checker-data": {
-                "type": "git",
-                "tag-pattern": "^([\\d.]+)$"
-                }
+                "tag": "2.42.12"
             }
             ]
         },
