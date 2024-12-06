@@ -20,6 +20,27 @@
     ],
     "modules": [
         {
+            "name": "gdk-pixbuf",
+            "buildsystem": "meson",
+            "config-opts": [
+            "-Dothers=enabled",
+            "-Dman=false",
+            "-Dgtk_doc=false",
+            "-Dbuiltin_loaders=png,bmp,gif"
+            ],
+            "sources": [
+            {
+                "type": "git",
+                "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git",
+                "tag": "2.42.12",
+                "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^([\\d.]+)$"
+                }
+            }
+            ]
+        },
+        {
             "name": "eclipse",
             "buildsystem": "simple",
             "build-options": {
