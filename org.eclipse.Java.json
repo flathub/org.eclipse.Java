@@ -17,7 +17,8 @@
         "--device=dri",
         "--socket=wayland",
         "--socket=fallback-x11",
-        "--socket=ssh-auth"
+        "--socket=ssh-auth",
+        "--talk-name=org.freedesktop.secrets"
     ],
     "modules": [
         {
