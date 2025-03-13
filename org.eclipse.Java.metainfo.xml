@@ -28,7 +28,9 @@
       <caption>Git Source Control Perspective</caption>
     </screenshot>
   </screenshots>
-  <developer_name>Eclipse Foundation</developer_name>
+  <developer id="org.eclipse">
+    <name>Eclipse Foundation</name>
+  </developer>
   <update_contact>akurtakov@gmail.com</update_contact>
   <releases>
     <release version="4.34" date="2024-12-04">
