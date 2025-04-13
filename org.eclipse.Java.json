@@ -28,6 +28,8 @@
                 "-Dothers=enabled",
                 "-Dman=false",
                 "-Dgtk_doc=false",
+                "-Dtests=false",
+                "-Dinstalled_tests=false",
                 "-Dbuiltin_loaders=png,bmp,gif"
             ],
             "sources": [
