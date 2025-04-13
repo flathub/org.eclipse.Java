@@ -30,7 +30,7 @@
                 "-Dgtk_doc=false",
                 "-Dtests=false",
                 "-Dinstalled_tests=false",
-                "-Dbuiltin_loaders=png,bmp,gif"
+                "-Dbuiltin_loaders=all"
             ],
             "sources": [
                 {
