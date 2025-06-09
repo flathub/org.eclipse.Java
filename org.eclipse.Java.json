@@ -73,8 +73,8 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-03/R/eclipse-java-2025-03-R-linux-gtk-x86_64.tar.gz",
-                    "sha512": "611ba51daad9c0e736f8f718ed4f77baf9c29edec240b6132de560bb0b4212d6b129bddfb6d476c88da2d907aa376506f08955c354867304318aa3fd3809dcb7",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-06/R/eclipse-java-2025-06-R-linux-gtk-x86_64.tar.gz",
+                    "sha512": "cad4bb830922e412703ce7b354780e03902e5297d786a2a86bcf058ac8a8a3e9dc04b058911a5850b8637a4b969aa4cd75e1ad13f4730921f34393bca6594e23",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
@@ -88,8 +88,8 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-03/R/eclipse-java-2025-03-R-linux-gtk-aarch64.tar.gz",
-                    "sha512": "af1d43a743a05c61cde7bd0b239f3317a450a62ee2b997665df7af8a140f3a7891464ae21e6396f71d71e9d22854c57aeb8af9671cd3d88742aa30c1bfb403c4",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-06/R/eclipse-java-2025-06-R-linux-gtk-aarch64.tar.gz",
+                    "sha512": "08c383fa680146097b1cfb3281e335282405c2b2e823509cef686839848a88e5bed58bf8d4e5a71ee92e52740c405140c16fca5027e51fa6636305bd5c9dfcb1",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
@@ -100,13 +100,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20250331.142442-15.jar",
-                    "sha256": "adf2c7210b3b42da6d35b075b9759adc7644d71fd1f8819ab751754e596b819e",
+                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20250528.133155-8.jar",
+                    "sha256": "e4915c0ad8afe22d16c11d829b6b0eefb96b8101293c9c446094ba5436576569",
                     "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
                 },
                 {
                     "type": "file",
-                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20250331.142442-15.so",
+                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20250528.133155-8.so",
                     "sha256": "6460250a44558e8ccb475705a40273eb0065e8cf746839ff5f502fc184d2c3df",
                     "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
                 },
