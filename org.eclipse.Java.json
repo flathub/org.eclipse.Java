@@ -73,8 +73,8 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-09/R/eclipse-java-2025-09-R-linux-gtk-x86_64.tar.gz",
-                    "sha512": "6842f02c8079f67704e9b24417fe58a1cf2cb510f30e76553a67549d6b63ef9ab3bd892103c98c73bae1f6cdcb6479a977fc2a3691a877f97cd171a31e50ce48",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-12/R/eclipse-java-2025-12-R-linux-gtk-x86_64.tar.gz",
+                    "sha512": "c67d2d68755ff5bcf798c516eefd9f2baa847776adb8844699eb9791f626fc99f2c531c0a6a2a3a6c2c914377112417791d4e1bffd66345a351290f98d1432d6",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
@@ -88,8 +88,8 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-09/R/eclipse-java-2025-09-R-linux-gtk-aarch64.tar.gz",
-                    "sha512": "df248798676df3c6d65f13f8c5dd8700403a1e55d46e27a41e2792268d67537913d85ae53509589a6f52a81f435c5649d2ce7e17e0aad8b24cdfee9c801fc7db",
+                    "url": "https://download.eclipse.org/technology/epp/downloads/release/2025-12/R/eclipse-java-2025-12-R-linux-gtk-aarch64.tar.gz",
+                    "sha512": "aaf240781c3cc76016a3b7bedd7907905b4419cc0cdea980ddbb301453731eb885c65f99294ee0b31803779e34b2324b1c4d19f0b3a2717932108b7210226701",
                     "strip-components": 0,
                     "x-checker-data": {
                         "type": "html",
