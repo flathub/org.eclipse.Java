@@ -22,25 +22,6 @@
     ],
     "modules": [
         {
-            "name": "gdk-pixbuf",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dothers=enabled",
-                "-Dman=false",
-                "-Ddocumentation=false",
-                "-Dtests=false",
-                "-Dinstalled_tests=false",
-                "-Dbuiltin_loaders=all"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf.git",
-                    "tag": "2.44.1"
-                }
-            ]
-        },
-        {
             "name": "eclipse",
             "buildsystem": "simple",
             "build-options": {
@@ -100,13 +81,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20250722.150010-10.jar",
-                    "sha256": "1a421e396bf43d423d64d2943aea4900d142749d58a7ea5fb777a484049a2271",
+                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20260107.212507-20.jar",
+                    "sha256": "85a006b5320e979254bb2e00670e3e9b10b5e7eb5cb8224ad500d9c9d74589ab",
                     "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
                 },
                 {
                     "type": "file",
-                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20250722.150010-10.so",
+                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20260107.212507-20.so",
                     "sha256": "6460250a44558e8ccb475705a40273eb0065e8cf746839ff5f502fc184d2c3df",
                     "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
                 },
