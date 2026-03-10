@@ -33,6 +33,9 @@
   </developer>
   <update_contact>akurtakov@gmail.com</update_contact>
   <releases>
+    <release version="4.39" date="2026-03-11">
+      <url>https://www.eclipse.org/eclipse/news/4.39/</url>
+    </release>
     <release version="4.38" date="2025-12-10">
       <url>https://www.eclipse.org/eclipse/news/4.38/</url>
     </release>
