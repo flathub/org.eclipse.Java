@@ -83,6 +83,7 @@
   </kudos>
   <content_rating type="oars-1.1"/>
   <url type="bugtracker">https://github.com/eclipse-platform/.github/issues</url>
+  <url type="vcs-browser">https://github.com/eclipse</url>
   <url type="homepage">https://eclipseide.org/</url>
   <url type="help">https://help.eclipse.org/</url>
   <url type="donation">https://www.eclipse.org/sponsor/</url>
