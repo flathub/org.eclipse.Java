@@ -3,7 +3,9 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
-    "sdk-extensions": [],
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.openjdk17"
+    ],
     "command": "eclipse",
     "finish-args": [
         "--require-version=1.7.1",
@@ -33,8 +35,6 @@
                 "ln -s /app/eclipse/eclipse /app/bin",
                 "install -Dm 644 org.eclipse.Java.desktop /app/share/applications/org.eclipse.Java.desktop",
                 "install -Dm 644 org.eclipse.Java.metainfo.xml /app/share/metainfo/org.eclipse.Java.metainfo.xml",
-                "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.jar /app/eclipse/flatpak-dev-shim.jar",
-                "install -Dm 644 flatpak-dev-shim-1.0.1-SNAPSHOT.so /app/lib/libflatpakdevshim.so",
                 "mkdir -p /app/share/icons/hicolor/32x32/apps",
                 "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png /app/share/icons/hicolor/32x32/apps/org.eclipse.Java.png ; fi",
                 "mkdir -p /app/share/icons/hicolor/64x64/apps",
@@ -43,7 +43,7 @@
                 "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png /app/share/icons/hicolor/128x128/apps/org.eclipse.Java.png ; fi",
                 "mkdir -p /app/share/icons/hicolor/256x256/apps",
                 "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png /app/share/icons/hicolor/256x256/apps/org.eclipse.Java.png ; fi",
-                "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
+                "sed -i -e \"/osgi.configuration.area/d\" /app/eclipse/eclipse.ini",
                 "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Java/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
                 "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini",
                 "echo \"-Dsun.boot.library.path=/app/lib\" >> /app/eclipse/eclipse.ini"
@@ -81,18 +81,6 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20260107.212507-20.jar",
-                    "sha256": "85a006b5320e979254bb2e00670e3e9b10b5e7eb5cb8224ad500d9c9d74589ab",
-                    "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.jar"
-                },
-                {
-                    "type": "file",
-                    "url": "https://repo.eclipse.org/content/repositories/linuxtools/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT/flatpak-dev-shim-1.0.1-20260107.212507-20.so",
-                    "sha256": "6460250a44558e8ccb475705a40273eb0065e8cf746839ff5f502fc184d2c3df",
-                    "dest-filename": "flatpak-dev-shim-1.0.1-SNAPSHOT.so"
-                },
-                {
-                    "type": "file",
                     "path": "org.eclipse.Java.desktop",
                     "dest-filename": "org.eclipse.Java.desktop"
                 },
@@ -100,6 +88,32 @@
                     "type": "file",
                     "path": "org.eclipse.Java.metainfo.xml",
                     "dest-filename": "org.eclipse.Java.metainfo.xml"
+                }
+            ]
+        },
+        {
+            "name": "flatpak-dev-shim",
+            "buildsystem": "simple",
+            "build-options": {
+                "no-debuginfo": true,
+                "env": {
+                    "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17",
+                    "PATH": "/usr/lib/sdk/openjdk17/bin:/usr/bin:/bin"
+                }
+            },
+            "build-commands": [
+                "mkdir -p flatpak-dev-shim/target/native flatpak-dev-shim/classes",
+                "cd flatpak-dev-shim && $JAVA_HOME/bin/javac --patch-module java.base=src/main/java -d classes $(find src/main/java -name \"*.java\")",
+                "cd flatpak-dev-shim && $JAVA_HOME/bin/jar cf target/flatpak-dev-shim.jar -C classes .",
+                "cd flatpak-dev-shim && make -C jni/ all",
+                "install -Dm644 flatpak-dev-shim/target/flatpak-dev-shim.jar /app/eclipse/flatpak-dev-shim.jar",
+                "install -Dm644 flatpak-dev-shim/target/libflatpakdevshim.so /app/lib/libflatpakdevshim.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/eclipse-linuxtools/org.eclipse.linuxtools.eclipse-build.git",
+                    "commit": "2a71e96e07f84ab4707589c446d06d77f6a7fc89"
                 }
             ]
         }
