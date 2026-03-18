@@ -1,0 +1,145 @@
+name: Update flatpak-dev-shim
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Every Monday at 08:00 UTC
+  workflow_dispatch:     # Allow manual triggering
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch latest flatpak-dev-shim version
+        id: get-version
+        run: |
+          python3 << 'EOF'
+          import xml.etree.ElementTree as ET
+          import urllib.request
+          import os
+
+          METADATA_URL = (
+              "https://repo.eclipse.org/content/repositories/linuxtools"
+              "/org/eclipse/linuxtools/flatpak/flatpak-dev-shim"
+              "/1.0.1-SNAPSHOT/maven-metadata.xml"
+          )
+
+          with urllib.request.urlopen(METADATA_URL) as resp:
+              xml_content = resp.read()
+
+          root = ET.fromstring(xml_content)
+          versioning = root.find("versioning")
+          snapshot = versioning.find("snapshot")
+          timestamp = snapshot.find("timestamp").text
+          build_number = snapshot.find("buildNumber").text
+          version = f"1.0.1-{timestamp}-{build_number}"
+
+          print(f"Latest version: {version}")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"version={version}\n")
+          EOF
+
+      - name: Check if update is needed
+        id: check
+        run: |
+          python3 << 'EOF'
+          import json
+          import re
+          import os
+
+          version = "${{ steps.get-version.outputs.version }}"
+
+          with open("org.eclipse.Java.json") as f:
+              manifest = json.load(f)
+
+          sources = manifest["modules"][0]["sources"]
+          current_version = ""
+          for src in sources:
+              if src.get("dest-filename") == "flatpak-dev-shim-1.0.1-SNAPSHOT.jar":
+                  m = re.search(
+                      r"flatpak-dev-shim-(1\.0\.1-\d{8}\.\d{6}-\d+)\.jar",
+                      src.get("url", ""),
+                  )
+                  if m:
+                      current_version = m.group(1)
+                  break
+
+          print(f"Current version: {current_version}")
+          print(f"Latest version:  {version}")
+
+          needs_update = current_version != version
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"needs_update={'true' if needs_update else 'false'}\n")
+              f.write(f"current_version={current_version}\n")
+          EOF
+
+      - name: Download artifacts and compute sha256
+        if: steps.check.outputs.needs_update == 'true'
+        run: |
+          python3 << 'EOF'
+          import hashlib
+          import json
+          import urllib.request
+          import os
+
+          version = "${{ steps.get-version.outputs.version }}"
+          BASE_URL = (
+              "https://repo.eclipse.org/content/repositories/linuxtools"
+              "/org/eclipse/linuxtools/flatpak/flatpak-dev-shim/1.0.1-SNAPSHOT"
+          )
+
+          def sha256_of_url(url: str) -> str:
+              print(f"  Downloading {url}")
+              with urllib.request.urlopen(url) as resp:
+                  data = resp.read()
+              digest = hashlib.sha256(data).hexdigest()
+              print(f"  sha256: {digest}")
+              return digest
+
+          jar_url = f"{BASE_URL}/flatpak-dev-shim-{version}.jar"
+          so_url  = f"{BASE_URL}/flatpak-dev-shim-{version}.so"
+
+          jar_sha256 = sha256_of_url(jar_url)
+          so_sha256  = sha256_of_url(so_url)
+
+          with open("org.eclipse.Java.json") as f:
+              manifest = json.load(f)
+
+          sources = manifest["modules"][0]["sources"]
+          for src in sources:
+              dest = src.get("dest-filename", "")
+              if dest == "flatpak-dev-shim-1.0.1-SNAPSHOT.jar":
+                  src["url"]    = jar_url
+                  src["sha256"] = jar_sha256
+              elif dest == "flatpak-dev-shim-1.0.1-SNAPSHOT.so":
+                  src["url"]    = so_url
+                  src["sha256"] = so_sha256
+
+          with open("org.eclipse.Java.json", "w") as f:
+              json.dump(manifest, f, indent=4)
+              f.write("\n")
+
+          print("org.eclipse.Java.json updated successfully.")
+          EOF
+
+      - name: Create Pull Request
+        if: steps.check.outputs.needs_update == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update flatpak-dev-shim to ${{ steps.get-version.outputs.version }}"
+          branch: "update/flatpak-dev-shim-${{ steps.get-version.outputs.version }}"
+          delete-branch: true
+          title: "Update flatpak-dev-shim to ${{ steps.get-version.outputs.version }}"
+          body: |
+            Updates `flatpak-dev-shim` from `${{ steps.check.outputs.current_version }}` to `${{ steps.get-version.outputs.version }}`.
+
+            Automatically generated by the weekly update workflow.
+          labels: dependencies
