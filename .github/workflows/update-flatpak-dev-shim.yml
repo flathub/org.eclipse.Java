@@ -20,25 +20,29 @@ jobs:
         id: get-version
         run: |
           python3 << 'EOF'
-          import xml.etree.ElementTree as ET
+          import re
           import urllib.request
           import os
 
-          METADATA_URL = (
-              "https://repo.eclipse.org/content/repositories/linuxtools"
-              "/org/eclipse/linuxtools/flatpak/flatpak-dev-shim"
-              "/1.0.1-SNAPSHOT/maven-metadata.xml"
+          # The maven-metadata.xml in this repo is stale; parse the HTML
+          # directory index instead to find all available builds.
+          BROWSE_URL = (
+              "https://repo.eclipse.org/service/rest/repository/browse"
+              "/linuxtools-maven2/org/eclipse/linuxtools/flatpak"
+              "/flatpak-dev-shim/1.0.1-SNAPSHOT/"
           )
 
-          with urllib.request.urlopen(METADATA_URL) as resp:
-              xml_content = resp.read()
+          with urllib.request.urlopen(BROWSE_URL) as resp:
+              html = resp.read().decode()
 
-          root = ET.fromstring(xml_content)
-          versioning = root.find("versioning")
-          snapshot = versioning.find("snapshot")
-          timestamp = snapshot.find("timestamp").text
-          build_number = snapshot.find("buildNumber").text
-          version = f"1.0.1-{timestamp}-{build_number}"
+          # Matches entries like  1.0.1-20260305.212503-24
+          versions = re.findall(r"1\.0\.1-(\d{8}\.\d{6})-(\d+)", html)
+          if not versions:
+              raise RuntimeError("No snapshot versions found in directory index")
+
+          # Pick the entry with the highest build number
+          latest = max(versions, key=lambda v: int(v[1]))
+          version = f"1.0.1-{latest[0]}-{latest[1]}"
 
           print(f"Latest version: {version}")
 
