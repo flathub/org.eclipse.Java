@@ -4,7 +4,7 @@
     "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.openjdk17"
+        "org.freedesktop.Sdk.Extension.openjdk25"
     ],
     "command": "eclipse",
     "finish-args": [
@@ -97,8 +97,8 @@
             "build-options": {
                 "no-debuginfo": true,
                 "env": {
-                    "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17",
-                    "PATH": "/usr/lib/sdk/openjdk17/bin:/usr/bin:/bin"
+                    "JAVA_HOME": "/usr/lib/sdk/openjdk25/jvm/openjdk-25",
+                    "PATH": "/usr/lib/sdk/openjdk25/bin:/usr/bin:/bin"
                 }
             },
             "build-commands": [
@@ -113,7 +113,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/eclipse-linuxtools/org.eclipse.linuxtools.eclipse-build.git",
-                    "commit": "2a71e96e07f84ab4707589c446d06d77f6a7fc89"
+                    "commit": "7e08e0ad11c2f573f0529826beb271535eaaf10d"
                 }
             ]
         }
