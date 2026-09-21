@@ -1,8 +1,8 @@
 {
     "id": "org.eclipse.Java",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "51",
-    "sdk": "org.gnome.Sdk",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "26.08",
+    "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.openjdk25"
     ],
