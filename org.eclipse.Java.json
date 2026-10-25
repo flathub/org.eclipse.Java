@@ -33,6 +33,7 @@
                 "mv eclipse /app",
                 "mkdir -p /app/bin",
                 "install -Dm 755 eclipse.sh /app/bin/eclipse",
+                "install -Dm 644 local.conf /app/etc/fonts/local.conf",
                 "install -Dm 644 org.eclipse.Java.desktop /app/share/applications/org.eclipse.Java.desktop",
                 "install -Dm 644 org.eclipse.Java.metainfo.xml /app/share/metainfo/org.eclipse.Java.metainfo.xml",
                 "mkdir -p /app/share/icons/hicolor/32x32/apps",
@@ -82,6 +83,10 @@
                 {
                     "type": "file",
                     "path": "eclipse.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "local.conf"
                 },
                 {
                     "type": "file",
