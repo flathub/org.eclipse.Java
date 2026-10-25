@@ -32,7 +32,7 @@
             "build-commands": [
                 "mv eclipse /app",
                 "mkdir -p /app/bin",
-                "ln -s /app/eclipse/eclipse /app/bin",
+                "install -Dm 755 eclipse.sh /app/bin/eclipse",
                 "install -Dm 644 org.eclipse.Java.desktop /app/share/applications/org.eclipse.Java.desktop",
                 "install -Dm 644 org.eclipse.Java.metainfo.xml /app/share/metainfo/org.eclipse.Java.metainfo.xml",
                 "mkdir -p /app/share/icons/hicolor/32x32/apps",
@@ -78,6 +78,10 @@
                         "version-pattern": "<present>(\\d{4}-\\d{2})/R</present>",
                         "url-template": "https://download.eclipse.org/technology/epp/downloads/release/$version/R/eclipse-java-$version-R-linux-gtk-aarch64.tar.gz"
                     }
+                },
+                {
+                    "type": "file",
+                    "path": "eclipse.sh"
                 },
                 {
                     "type": "file",
